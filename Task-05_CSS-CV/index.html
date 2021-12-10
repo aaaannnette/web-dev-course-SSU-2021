@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Anna Gryaznova CV</title>
+</head>
+
+<body>
+
+    <header>
+        <table class="header-table">
+            <tr>
+               <td class="avatar">  
+                   <div class="header-img">
+                        <img class="header-photo" src="../Task-05_CSS-CV/img/photo.jpeg" alt="photo"> 
+                   </div>
+                </td>
+               <td class="header-name"> 
+                    <h2>Anna Gryaznova</h2>
+                    <p>UI Developer</p>
+                </td>
+                <td class="contacts">
+                   <div>
+                        <div class="link-wrapper">
+                            <a href="mailto:gryaznovaanna@icloud.com"><ion-icon name="mail-outline" size="large"></ion-icon></a>
+                        </div>
+                        <div class="link-wrapper">
+                            <a href="tel:+78888800008"><ion-icon name="call-outline" size="large"></ion-icon></a>
+                        </div>
+                        <div class="link-wrapper">
+                            <a href="https://github.com/aaaannnette" target="_blank"><ion-icon name="logo-github" size="large"></ion-icon></a>
+                        </div>
+                   </div>
+                </td>
+            </tr>
+        </table> 
+        <hr>
+    </header>
+    
+    <main>
+        <section class="section-experience">
+            <table>
+                <tr>
+                    <td><h3>Summary</h3></td>
+                    <td class="section-content">
+                        <p>I am a 4th year student of the Faculty of Mechanics and Mathematics 
+                            at Saratov State University. I work as a junior branch specialist (analyst) 
+                            at Neoflex. I have experience with Agile Scrum methodology.
+                        </p>
+                        <ul>
+                            <li>
+                                ✏ Experience with JavaScript, HTML and CSS
+                            </li>
+                            <li>
+                                ✏ Good communication skills, ability to work in a team
+                            </li>
+                            <li>
+                                ✏ Hardworking, responsible, attentive
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>  
+        </section>
+        <hr>
+        <section class="section-experience">
+            <table>
+                <tr>
+                    <td><h3>Technical skills</h3></td>
+                    <td class="section-content">
+                        <ul>
+                            <li>
+                                <div>
+                                    <progress max="100" value="75"></progress>
+                                    Programming languages: HTML, CSS, JavaScript, SQL
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <progress max="100" value="50"></progress>
+                                    DB: PostgreSQL, MySQL
+                                </div>                                
+                            </li>
+                            <li>
+                                <div>
+                                    <progress max="100" value="45"></progress>
+                                    IDE: Visual Studio Code
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <progress max="100" value="65"></progress>
+                                    Mac OS X, Windows, Linux
+                                </div>                                
+                            </li>
+                            <li>
+                                <div>
+                                    <progress max="100" value="35"></progress>
+                                    Git
+                                </div>                                 
+                            </li>
+                            <li>
+                                <div>
+                                    <progress max="100" value="75"></progress>
+                                    Notations: BPMN, UML
+                                </div>                               
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <hr>
+        <section class="section-experience">
+            <table>
+                <tr>
+                    <td>
+                        <h3>Experience</h3>
+                    </td>
+                    <td class="section-content">
+                        <p><b>July 2021 - participation in the hackathon from the Neoflex company</b></p>
+                        <p>A telegram bot was developed that can issue the rate of cryptocurrencies,
+                             subscribing to the rate of the cryptocurrency will change by a certain 
+                             percentage.(@cryptoKosh_bot)</p>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <hr>
+        <section class="section-experience">
+            <table>
+                <tr>
+                    <td><h3>Education and Certificates</h3></td>
+                    <td class="section-content">
+                        <p>
+                            <b>2018 - 2022</b> - Saratov State University named after N.G.Chernyshevsky, 
+                            Faculty of Mechanics and Mathematics, direction - Applied Informatics.                             Saratov State University 
+                        </p>
+                        <p>
+                            <b>March - July 2021</b>, Neoflex training center, direction - analytics.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <hr>
+        <section class="section-experience">
+            <table>
+                <tr>
+                    <td><h3>Languages</h3></td>
+                    <td class="section-content">
+                        <ol>
+                            <li>🇷🇺 Russian- Native Speaker</li>
+                            <li>🇫🇷 French - B2</li>
+                            <li>🇬🇧 English - A1 (at the moment I go to the tutor to learn the language)</li>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <hr>
+    </main>
+    <footer>
+        <h3>Feedback</h3>
+        <div class="feedback-form">
+            <form>
+                <div class="feedback">
+                    <label for="name_feedback"> Name: </label>
+                    <input type="text" id="name_feedback" placeholder="Enter your name">
+                </div>
+                <div class="feedback">
+                    <label for="email_feedback"> E-mail: </label>
+                    <input type="email" id="email_feedback" placeholder="Enter your email">
+                </div>
+                <div class="feedback">
+                    <label for="message_feedback"> Message: </label>
+                    <textarea id="message_feedback" placeholder="Enter your message"></textarea>
+                </div>
+                <div class="feedback-input">
+                    <input type="reset" value="clear">
+                    <input type="submit" value="send">
+                </div>
+            </form>
+        </div>
+    </footer>
+
+<script type = "module"  src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> 
+<script nomodule src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        
+
+</body>
+</html>
