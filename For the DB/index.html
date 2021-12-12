@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;700&display=swap" rel="stylesheet">
+    <title>Поиск похожих документов</title>
+</head>
+<body>
+    <header>
+        <h1>Поиск похожих и связанных документов с использованием семантического поиска</h1>
+    </header>
+    <nav>
+        <h3 class="content">Содержание</h3>
+        <ul class="list">
+            <li><a href="#one">Поиск похожих ...</a></li>
+            <li><a href="#one_exmp">Пример. Поиск документов</a></li>
+            <li><a href="#two">Как правильно искать ...</a></li>
+            <li><a href="#two_exmp">Пример. Поиск ключевых фраз</a></li>
+        </ul> 
+    </nav>
+    <main>
+        <section>
+            <h2 id="one">Поиск похожих и связанных документов с помощью SEMANTICSIMILARITYTABLE</h2>
+            <p>Описывается процесс поиска схожих или связанных документов или текстовых значений и сведений об их сходстве или связи в столбцах, настроенных для статистического семантического индексирования.</p>
+            <p>Функция SEMANTICSIMILARITYTABLE возвращает таблицу, состоящую из нуля, одной или нескольких строк, содержимое которых в указанном столбце семантически схоже с заданным документом. На эту функцию набора строк можно ссылаться в предложении FROM инструкции SELECT как на обычное имя таблицы.</p>
+            <p>Искать схожие документы по разным столбцам невозможно. Функция SEMANTICSIMILARITYTABLE извлекает результаты только из столбца, совпадающего с исходным столбцом, определяемым аргументом source_key .</p>
+            <div class="att">
+                <h4>Важно!</h4>
+                <p>Для целевых столбцов должно быть включено полнотекстовое и семантическое индексирование.</p>
+            </div>
+        </section>
+        <section>
+            <h2 id="one_exmp">Пример. Поиск документов, наиболее похожих на другой документ</h2>
+            <p>В следующем примере извлекается до 10 кандидатов, подобных указанному кандидату, обозначенному @CandidateID из таблицы HumanResources.JobCandidateHumanResources.JobCandidate в примере базы данных AdventureWorks2012.</p>
+            <code>SELECT TOP(10) KEY_TBL.matched_document_key AS Candidate_ID  
+                FROM SEMANTICSIMILARITYTABLE  
+                    (  
+                    HumanResources.JobCandidate,  
+                    Resume,  
+                    @CandidateID  
+                    ) AS KEY_TBL  
+                ORDER BY KEY_TBL.score DESC;  
+                GO</code>
+        </section>
+        <section>
+            <h2 id="two">Как правильно искать сведения о схожести или связи документов с помощью функции SEMANTICSIMILARITYDETAILSTABLE</h2>
+            <p>Чтобы получить дополнительные сведения о ключевых фразах, которые делают документы схожими или связанными, вызовите функцию semanticsimilaritydetailstable (Transact-SQL).</p>
+            <p>Функция SEMANTICSIMILARITYDETAILSTABLE возвращает таблицу из нуля, одной или нескольких строк с ключевыми фразами, общими для двух документов (исходного документа и сопоставленного документа), содержимое которых семантически схоже. На эту функцию набора строк можно ссылаться в предложении FROM инструкции SELECT как на обычное имя таблицы.</p>
+            <div class="att">
+                <h4>Важно!</h4>
+                <p>Для целевых столбцов должно быть включено полнотекстовое и семантическое индексирование.</p>
+            </div>
+        </section>
+        <section>
+            <h2 id="two_exmp">Пример. Поиск ключевых фраз, которые больше всего схожи в разных документах</h2>
+            <p>В следующем примере производится извлечение 5 ключевых фраз, имеющих высший показатель подобия среди указанных кандидатов в таблице HumanResources.JobCandidate образца базы данных AdventureWorks2012.</p>
+            <code>SELECT TOP(5) KEY_TBL.keyphrase, KEY_TBL.score  
+                FROM SEMANTICSIMILARITYDETAILSTABLE  
+                    (  
+                    HumanResources.JobCandidate,  
+                    Resume, @CandidateID,  
+                    Resume, @MatchedID  
+                    ) AS KEY_TBL  
+                ORDER BY KEY_TBL.score DESC;  
+                GO </code>
+        </section>
+    </main>
+</body>
+</html>

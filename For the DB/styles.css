@@ -1,0 +1,75 @@
+body {
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    overflow-wrap: break-word;
+}
+
+header {
+    height: 120px;
+    background-color: rgba(105, 133, 133, 0.699);
+    border-radius: 95px 20px;
+    text-align: center;
+    display: flex;
+}
+
+h1 {
+    margin: auto;
+    
+}
+
+li {
+    list-style: none;
+    margin-left: -15px;
+}
+
+a {
+    text-decoration:none;
+    color: black;
+}
+
+a:visited {
+    color: rgb(50, 68, 83);
+}
+
+nav {
+    float: left;
+    width: 20%;
+    position: fixed;
+}
+
+.content {
+    text-align: center;
+    margin-bottom: -5px;
+}
+
+main {
+    float: right;
+    width: 60%;
+    margin-right: 180px;
+}
+
+section {
+    background-color: rgba(24, 150, 182, 0.178);
+    padding: 0px 15px 5px 15px;
+    margin: 10px 0;
+    border-radius: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.att {
+    background-color: rgba(28, 97, 158, 0.205);
+    padding: 0 20px;
+    border-radius: 20px;
+}
+
+h4 {
+    padding-top: 10px;
+}
+
+div > p {
+    margin: -15px 0 6px 0;
+    padding-bottom: 8px;
+}
+
